@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Count" onclick="plus()" />
+    <input type="button" value="Count" onclick="minus()" />
+
+    <script>
+        //Написать функцию которая возвращает результат возведения числа в степень “n”. Функция принимает 2 аргумента. Само число и степень в которую его нужно возвести.        
+
+        function pow(x, n) {
+            var x = 3;
+            var n = 3;
+            return Math.pow(x, n)
+        }
+
+        //Скорректировать функцию с учетом особенностей мат операций в js. Чтобы при передаче числа с точкой (не степени) функция работала корректно.
+
+        function pow(x, n) {
+            var x = 3.6;
+            var n = 3;
+            return Math.round(Math.pow(x, n))
+        }
+
+        //Написать 2 функции (можно методы) которые при каждом вызове будут возвращать инкремент\декремент. То есть функции счетчики. Для проверки вызвать их в бесконечном цикле (имеется в виду setTimeout)
+        //К задаче “4” добавить на страницу кнопку которая будет выводить текущее состояние счетчиков.
+
+        var count = 1;
+
+        function plus() {
+            return console.log(count++);
+        }
+
+        setTimeout(plus, 2000);
+
+
+
+
+        var count = 0;
+
+        function minus() {
+            return console.log(count--);
+        }
+
+        setTimeout(minus, 2000);
+
+    </script>
+
+
+
+</body>
+
+</html>
